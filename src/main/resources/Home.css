@@ -1,0 +1,32 @@
+*{
+}
+
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    text-align: center;
+    font-size: 8pt;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+img{
+    width: 85%;
+    height: auto;
+    max-height: 200px;
+    max-width: 500px;
+}
+
+.line{
+    margin-left: 0px;
+    margin-top: 8px;
+    line-height: 10px;
+    height: 1px;
+    background-color: grey;
+    width: 100%;
+    border-radius: 50%;
+}
+
