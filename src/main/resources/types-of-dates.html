@@ -6,55 +6,59 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./types-of-dates.css">
+        <link rel="stylesheet" href="./gallery.css">
+        <link rel="stylesheet" href="./NavBar.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
         <title>CSS Grids Gallery</title>
     </head>
+    
     <body>
-        <div class="container-logo">
-            <img src="./Images/Inverted Columbus Skyline Logo with Name.png" alt="logo" />
-        </div>
-        <div class="line"></div>
-        <nav>
-            <section class="navigation-bar">
-              <div class="left-side">
-                <div class="navigation-bar-top">
-                  <a href="./Home.html">Home</a>
-                </div>
-                <div class="navigation-bar-top">
-                  <a href="./types-of-dates.html">Activities</a>
-                </div>
-              </div>
-            </section>
-        </nav>
-        <div class="container">
-            <div class="gallery">
-                <figure class="gallery__item gallery__item--1">
-                    <img src="/src/main/resources/Images/Columbus Clippers.jpg" alt="Gallery image 1" class="gallery__img">
-                    <div class="overlay--1">
-                        <div class="text--1">Professional Sports</div>
-                    </div>
-                </figure>
-                <figure class="gallery__item gallery__item--2">
-                    <img src="/src/main/resources/Images/Topgolf.jpg" alt="Gallery image 2" class="gallery__img">
-                    <div class="overlay--2">
-                        <div class="text--2">Athletics</div>
-                    </div>
-                </figure>
-                <figure class="gallery__item gallery__item--3">
-                    <img src="/src/main/resources/Images/Innis Woods Metro Park.jpg" alt="Gallery image 3" class="gallery__img">
-                </figure>
-                <figure class="gallery__item gallery__item--4">
-                    <img src="/src/main/resources/Images/Columbus Zoo Main Entrance.jpg" alt="Gallery image 4" class="gallery__img">
-                </figure>
-                <figure class="gallery__item gallery__item--5">
-                    <img src="/src/main/resources/Images/Ohio Theater.jpg" alt="Gallery image 5" class="gallery__img">
-                </figure>
-                <figure class="gallery__item gallery__item--6">
-                    <img src="/src/main/resources/Images/Skully's Diner.jpg" alt="Gallery image 6" class="gallery__img">
-                </figure>
+        <header>
+            <div class="container-logo">
+                <img src="./Images/Inverted Columbus Skyline Logo with Name.png" alt="logo" />
             </div>
-        </div>
+            <div class="line"></div>
+            <nav>
+                <section class="navigation-bar">
+                  <div class="left-side">
+                    <div class="navigation-bar-top">
+                      <a href="./Home.html">Home</a>
+                    </div>
+                    <div class="navigation-bar-top">
+                      <a href="./types-of-dates.html">Activities</a>
+                    </div>
+                  </div>
+                </section>
+            </nav>
+        </header>
+        <main>
+            <div class="gallery">
+                <div class="left">
+                    <div class="image-box">
+                            <a class="overlay">Professional Sports</a>
+                            <div class="image" id="image1"></div>
+                    </div>
+                    <div class="image-box">
+                            <a class="overlay">Nature</a>
+                            <div class="image" id="image2"></div>
+                    </div>
+                    <div class="image-box">
+                            <a class="overlay">Science</a>
+                            <div class="image" id="image3"></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="image-box">
+                        <a class="overlay">Theater</a>
+                            <div class="image" id="image4"></div>
+                    </div>
+                    <div class="image-box">
+                        <a class="overlay">Food</a>
+                            <div class="image" id="image5"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
