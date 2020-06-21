@@ -129,3 +129,27 @@ main{
     background-image: url("./Images/Skully\'s\ Diner.jpg");
     background-size: 100% 100%;
 }
+#image6{
+    background-image: url("./Images/Active.jpg");
+    background-size: 100% 100%;
+}
+
+#image7{
+    background-image: url("./Images/Artsy.jpg");
+    background-size: 100% 100%;
+}
+
+#image8{
+    background-image: url("./Images/Sporty.jpg");
+    background-size: 100% 100%;
+}
+
+#image9{
+    background-image: url("./Images/Nature.jpg");
+    background-size: 100% 100%;
+}
+
+#image10{
+    background-image: url("./Images/Food.jpg");
+    background-size: 100% 100%;
+}
