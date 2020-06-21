@@ -3,6 +3,14 @@ h1 {
     text-align: center;
     font-size: 8pt;
 }
+
+.description {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 4pt;
+}
+
+
 /* Img{
     width: 85%;
     height: auto;
