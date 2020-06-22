@@ -20,8 +20,12 @@ h1 {
     margin-top: 10px;
 }
 
+.navBar{
+    width: 15%;
+}
+
 .fling-minislide{
     width: 70%;
     height: 100%;
-    padding-left: 10px;
+    padding-left: 4%;
 }
