@@ -130,50 +130,50 @@ body{
 }
 
 #image1{
-    background-image: url("./Images/Columbus\ Clippers.jpg");
+    background-image: url("static/static/Columbus\ Clippers.jpg");
     background-size: 100% 100%;
 }
 
 #image2{
-    background-image: url("./Images/Innis\ Woods\ Metro\ Park.jpg");
+    background-image: url("static/static/Innis\ Woods\ Metro\ Park.jpg");
     background-size: 100% 100%;
 }
 
 #image3{
-    background-image: url("./Images/Columbus\ Zoo\ Main\ Entrance.jpg");
+    background-image: url("static/static/Columbus\ Zoo\ Main\ Entrance.jpg");
     background-size: 100% 100%;
 }
 
 #image4{
-    background-image: url("./Images/Ohio\ Theater.jpg");
+    background-image: url("static/static/Ohio\ Theater.jpg");
     background-size: 100% 100%;
 }
 
 #image5{
-    background-image: url("./Images/Skully\'s\ Diner.jpg");
+    background-image: url("static/static/Skully\'s\ Diner.jpg");
     background-size: 100% 100%;
 }
 #image6{
-    background-image: url("./Images/Active.jpg");
+    background-image: url("Images/Active.jpg");
     background-size: 100% 100%;
 }
 
 #image7{
-    background-image: url("./Images/Artsy.jpg");
+    background-image: url("Images/Artsy.jpg");
     background-size: 100% 100%;
 }
 
 #image8{
-    background-image: url("./Images/Sporty.jpg");
+    background-image: url("Images/Sporty.jpg");
     background-size: 100% 100%;
 }
 
 #image9{
-    background-image: url("./Images/Nature.jpg");
+    background-image: url("Images/Nature.jpg");
     background-size: 100% 100%;
 }
 
 #image10{
-    background-image: url("./Images/Food.jpg");
+    background-image: url("Images/Food.jpg");
     background-size: 100% 100%;
 }

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
         <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="static/gallery.css">
         <link rel="stylesheet" href="static/NavBar.css">
@@ -24,8 +24,10 @@
                     <button onclick="location.href='Home.html'" type="button" class="dropbtn">Home</button>
                 </div>
                 <div class="dropdown">
-                    <button onclick="location.href='types-of-dates.html'" type="button" class="dropbtn"><u>Activities</u></button>
+                    <button onclick="location.href='Activities.html'" type="button" class="dropbtn"><u>Activities</u></button>
                 <div class="dropdown-content">
+                    <th:each="activity:${activities}"></th>
+                    <th:text="${activity.name}></th:text>
                     <a href="./science.html">Science</a>
                     <a href="./theater.html">Theater</a>
                     <a href="./nature.html">Nature</a>

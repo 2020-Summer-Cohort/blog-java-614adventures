@@ -3,12 +3,9 @@
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Objects;
+import java.util.*;
 
-@Entity
+    @Entity
 public class Post {
     @Id
     @GeneratedValue
@@ -24,7 +21,7 @@ public class Post {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-    protected Post(){}
+    protected Post(String title, String body, LocalDate date, LocalTime time, Author author, Optional<Activity> postActivity){}
 
     public Post(String title, String body, LocalDate date, LocalTime time,
                 Author author, Activity activity, Hashtag... hashtags) {

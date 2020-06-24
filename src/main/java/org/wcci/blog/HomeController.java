@@ -6,16 +6,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-    ActivityStorage activityStorage;
 
-    public HomeController(ActivityStorage activityStorage) {
-        this.activityStorage = activityStorage;
+    ActivityRepository activityRepo;
+
+    public HomeController(ActivityRepository activityRepo) {
+
+        this.activityRepo = activityRepo;
     }
 
-    @RequestMapping({"", "/"})
-
+    @RequestMapping({"","/"})
     public String showHome(Model model) {
-        model.addAttribute("activities", activityStorage.getAllActivities());
+        model.addAttribute("activities", activityRepo.findAll());
         return "home-template";
     }
 

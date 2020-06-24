@@ -26,6 +26,7 @@ public class Populator implements CommandLineRunner {
     activityRepo.save(food);
     activityRepo.save(professionalSports);
     Hashtag hashtag1 = new Hashtag("PerformingArts");
+    Hashtag hashtag2 = new Hashtag("Artist");
     hashtagRepo.save(hashtag1);
 //    Post post1 = new Post(1,"Ohio Theater", "Check out the \"Official Theatre of the State of Ohio\"" +
 //            "by visiting Capitol Square and catching a performance at the Ohio Theatre.The Ohio Theatre " +
