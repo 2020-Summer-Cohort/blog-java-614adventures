@@ -1,4 +1,7 @@
 package org.wcci.blog;
 
-public interface ActivityRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface ActivityRepository extends CrudRepository<Activity, Long> {
+    Activity findByActivity(String name);
 }

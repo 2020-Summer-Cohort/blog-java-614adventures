@@ -1,4 +1,8 @@
 package org.wcci.blog;
 
-public interface HashtagRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface HashtagRepository extends CrudRepository<Hashtag, Long> {
+    Hashtag findByHashtag(String name);
+
 }

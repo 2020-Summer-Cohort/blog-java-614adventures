@@ -14,38 +14,32 @@ public class Author {
     @Id
     @GeneratedValue
     private long id;
-    private String firstName;
-    private String lastName;
+    private String name;
 
-    protected Author(){}
+    protected Author() {
+    }
 
-    public Author(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Author(String name) {
+        this.name = name;
     }
 
     public long getId() {
         return id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public Collection<Post> getPosts() {
-        return posts;
-    }
+//    public Collection<Post> getPosts() {
+//        return posts;
+//    }
 
     @Override
     public String toString() {
         return "Author{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -55,12 +49,11 @@ public class Author {
         if (o == null || getClass() != o.getClass()) return false;
         Author author = (Author) o;
         return id == author.id &&
-                Objects.equals(firstName, author.firstName) &&
-                Objects.equals(lastName, author.lastName);
+                Objects.equals(name, author.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
+        return Objects.hash(id, name);
     }
 }
