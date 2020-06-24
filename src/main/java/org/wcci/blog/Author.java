@@ -15,12 +15,15 @@ public class Author {
     @GeneratedValue
     private long id;
     private String name;
+    @OneToMany (mappedBy = "author")
+    private Collection<Post> posts;
 
     protected Author() {
     }
 
     public Author(String name) {
         this.name = name;
+        this.posts=posts;
     }
 
     public long getId() {
@@ -29,6 +32,10 @@ public class Author {
 
     public String getName() {
         return name;
+    }
+
+    public Collection<Post> getPosts() {
+        return posts;
     }
 
     @Override

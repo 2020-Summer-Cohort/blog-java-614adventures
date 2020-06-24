@@ -17,16 +17,17 @@ public class Post {
     private String body;
     private static LocalDate date;
     private static LocalTime time;
-    private String author;
     @ManyToOne
     private Activity activity;
+    @ManyToOne
+    private Author author;
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
     protected Post(){}
 
     public Post(String title, String body, LocalDate date, LocalTime time,
-                String author, Activity activity, Hashtag... hashtags) {
+                Author author, Activity activity, Hashtag... hashtags) {
         this.title = title;
         this.body = body;
         this.date=date;
@@ -60,7 +61,7 @@ public class Post {
         return activity;
     }
 
-    public String getAuthors() {
+    public Author getAuthors() {
         return author;
     }
 
