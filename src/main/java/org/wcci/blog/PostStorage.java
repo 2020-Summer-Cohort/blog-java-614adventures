@@ -11,10 +11,14 @@ public class PostStorage {
     }
 
     public Post findPostByName(String name){
-        return postRepo.findByPost(name);
+        return postRepo.findByTitle(name);
     }
 
     public Post findByID(long id){
         return postRepo.findById(id).get();
+    }
+
+    public void addPost(Post post) {
+        postRepo.save(post);
     }
 }

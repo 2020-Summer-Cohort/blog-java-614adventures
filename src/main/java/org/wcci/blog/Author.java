@@ -31,10 +31,6 @@ public class Author {
         return name;
     }
 
-//    public Collection<Post> getPosts() {
-//        return posts;
-//    }
-
     @Override
     public String toString() {
         return "Author{" +

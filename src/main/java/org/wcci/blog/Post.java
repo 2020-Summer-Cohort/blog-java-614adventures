@@ -25,14 +25,14 @@ public class Post {
 
     protected Post(){}
 
-    public Post(long id, String title, String body, LocalDate date, LocalTime time, String author, Activity activity, Hashtag... hashtags) {
-        this.id = id;
+    public Post(String title, String body, LocalDate date, LocalTime time,
+                String author, Activity activity, Hashtag... hashtags) {
         this.title = title;
         this.body = body;
         this.date=date;
         this.time=time;
-        this.activity = activity;
         this.author = author;
+        this.activity = activity;
         this.hashtags = new ArrayList<>(Arrays.asList(hashtags));
     }
 

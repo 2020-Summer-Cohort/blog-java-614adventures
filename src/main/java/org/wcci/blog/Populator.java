@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 public class Populator implements CommandLineRunner {
     @Autowired
     ActivityRepository activityRepo;
-//    @Autowired
-////    AuthorRepository authorRepo;
     @Autowired
     HashtagRepository hashtagRepo;
     @Autowired

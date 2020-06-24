@@ -1,7 +1,7 @@
-//package org.wcci.blog;
-//
-//import org.springframework.data.repository.CrudRepository;
-//
-//public interface AuthorRepository extends CrudRepository<Author, Long> {
-//    Author findByAuthor(String name);
-//}
+package org.wcci.blog;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface AuthorRepository extends CrudRepository<Author, Long> {
+    Author findByName(String name);
+}

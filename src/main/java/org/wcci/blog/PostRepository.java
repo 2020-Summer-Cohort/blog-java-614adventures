@@ -3,5 +3,5 @@ package org.wcci.blog;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
-    Post findByPost(String title);
+    Post findByTitle(String title);
 }
