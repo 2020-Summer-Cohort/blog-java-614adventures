@@ -9,7 +9,7 @@
     <link type="text/css" rel="stylesheet" href="../static/Home.css">
     <link rel="stylesheet" href="../static/gallery.css">
     <link rel="stylesheet" href="../static/NavBar.css">
-    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+<!--    <link rel="shortcut icon" type="image/png" href="img/favicon.png">-->
     <title>614Adventures Posts</title>
 </head>
 <body>
@@ -20,7 +20,6 @@
     </div>
     <div class="line"></div>
 </div>
-<!--<h1 th:text="${activity.name}"> name </h1>-->
 <div class="mainblock">
     <div class="navBar">
         <div class="dropdown">
@@ -30,11 +29,12 @@
             </ul>
         </div>
     </div>
-
+    <h1 th:text="${activity.name}"> name </h1>
     <ul>
         <li th:each="post:${activity.posts}">
-            <a th:text="${post.title}"
-               th:href="@{'/posts/'+${post.title}}">Ohio Theater</a>
+            <a th:href="@{'/posts/'+${post.title}}"
+               th:text="${post.title}"
+            >Ohio Theater</a>
         </li>
     </ul>
 </div>
@@ -42,12 +42,16 @@
 <div class="block2">
     <h2>Add Post</h2>
     <form action="/posts/add" method="POST" class="new-post-form">
-        <li><label for="new-post__post-title-input" class="form__label">Title</label>
-            <input type="text" name="title" id="new-post__post-title-input"></li>
-        <li><label for="new-post__post-body-input" class="form__label">Body</label>
-            <textarea type="text" name="body" id="new-post__post-body-input"></li>
+        <label for="new-post__post-title-input" class="form__label">
+            Title
+        </label>
+        <input type="text" name="title" id="new-post__post-title-input" autocomplete="off" required>
+        <label for="new-post__post-body-input" class="form__label">
+            Body
+        </label>
+        <textarea type="text" name="body" id="new-post__post-body-input"  autocomplete="off" required></textarea>
         <input th:value="${activity.id}" type="hidden" name="activity" id="new-post__post-activity-input">
-        <button type="submit">Submit</button>
+        <button class="submit" type="submit">Submit</button>
     </form>
 </div>
 <div class="block3"></div>

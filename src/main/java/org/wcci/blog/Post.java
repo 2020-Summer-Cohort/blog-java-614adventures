@@ -22,8 +22,7 @@ public class Post {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-    protected Post(String title, String body, LocalDate date, LocalTime time, Author author, Optional<Activity> postActivity) {
-    }
+    protected Post() {}
 
     public Post(String title, String body, LocalDate date, LocalTime time,
                 Author author, Activity activity, Hashtag... hashtags) {
@@ -68,6 +67,10 @@ public class Post {
         return hashtags;
     }
 
+    public void addHashtags(Hashtag hashtagToAdd) {
+        hashtags.add(hashtagToAdd);
+    }
+
     @Override
     public String toString() {
         return "Post{" +
@@ -93,5 +96,7 @@ public class Post {
     public int hashCode() {
         return Objects.hash(id, title, body, activity);
     }
+
+
 }
 

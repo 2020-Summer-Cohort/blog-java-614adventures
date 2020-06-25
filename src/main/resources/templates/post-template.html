@@ -15,7 +15,7 @@
 <body>
 <div class="logo">
     <div class="container-logo">
-        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+        <img src="/static/Posts/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
              th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
     </div>
     <div class="line"></div>
@@ -27,31 +27,32 @@
             <ul>
                 <li><a class="dropbtn" th:href="@{'/'}">Home</a></li>
                 <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
-
-                <ul>
-                    <li><a th:text="${activity.name}"
-                           th:href="@{'/activities/'+${activity.name}}">Activity</a></li>
-                </ul>
+                <li><a th:text="${post.activity.name}" th:href="@{'/activities/'+${post.activity.name}}">Activities</a></li>
+            </ul>
         </div>
     </div>
 </div>
 <div class="block2">
-<section>
-    <ul>
-        <li><h1 th:text="${post.title}">Ohio Theater</h1></li>
-        <li><h2 th:text="${post.body}">Description</h2></li>
-        <li><h3 th:text="${post.activity}">Activity Type</h3></li>
-        <li><h3 th:text="${post.author}">Author</h3></li>
-        <li><p th:text="${post.date}">Date</p></li>
-        <li><p th:text="${post.time}">Time</p></li>
-       </ul>
+    <section>
+        <h1 th:text="${post.title}">Ohio Theater</h1>
+        <h2 th:text="${post.body}">Description</h2>
+        <h3 th:text="${post.activity.name}">Activity Type</h3>
+        <h3 th:text="${post.authors.name}">Author</h3>
+        <p th:text="${post.date}">Date</p>
+        <p th:text="${post.time}">Time</p>
+    </section>
         <ul>
             <li th:each="hashtag:${post.hashtags}">
-                <a th:text="'#'+${post.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}"></a>
+                <a th:text="'#'+ ${hashtag.name}" th:href="@{'/tags/'+${hashtag.name}}"></a>
             </li>
         </ul>
         <section>
-            <div class="block3"></div>
 </div>
+<form action="/posts/hashtag/add" method="POST" class="new-hashtag-form">
+    <input type="hidden" th:value="${post.id}" name="id" id="new-post__post-id-input">
+    <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag #</label>
+    <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>
