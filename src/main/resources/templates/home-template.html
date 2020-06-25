@@ -14,7 +14,7 @@
 <body>
 <div class="logo">
     <div class="container-logo">
-        <img src="../static/static/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"/>
+        <img src="/static/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo" th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
     </div>
     <div class="line"></div>
 </div>
@@ -29,7 +29,7 @@
         </div>
         <div class="dropdown">
             <ul>
-                <li> <a href="Activities.html" type="button" class="dropbtn">Activities</a></li>
+                <li> <a th:href="@{Activities.html}" type="button" class="dropbtn">Activities</a></li>
 <!--                <li th:each="activity: ${activities}"  class= "dropdown-content">-->
 <!--                    <a th:text="${activity.name}"-->
 <!--                    th:href="@{'/activities/' + ${activity.name}}">Activity Name</a></li>-->
@@ -48,10 +48,10 @@
     </div>
 </div>
 <div class="fling-minislide">
-    <img src="../static/Images/ColumbusLove.jpg" alt="Slide 4"/>
-    <img src="../static/Images/ColumbusSkylineNight2.jpg" alt="Slide 3"/>
-    <img src="../static/Images/ColumbusMural.jpg" alt="Slide 2"/>
-    <img src="../static/Images/ColumbusSkyline.jpg" alt="Slide 1"/>
+    <img src="../static/Images/ColumbusLove.jpg" alt="Slide 4" th:src="@{Images/ColumbusLove.jpg}"/>
+    <img src="./static/Images/ColumbusSkylineNight2.jpg" alt="Slide 3" th:src="@{Images/ColumbusSkylineNight2.jpg}"/>
+    <img src="./static/Images/ColumbusMural.jpg" alt="Slide 2" th:src="@{Images/ColumbusMural.jpg}"/>
+    <img src="./static/Images/ColumbusSkyline.jpg" alt="Slide 1" th:src="@{Images/ColumbusSkyline.jpg}"/>
 </div>
 <div class="block3"></div>
 </div>

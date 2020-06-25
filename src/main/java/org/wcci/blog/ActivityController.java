@@ -23,7 +23,7 @@ public class ActivityController {
         return "activities-template";
     }
 
-    @RequestMapping("activities")
+    @RequestMapping("/activities")
     public String showAllActivities(Model model){
         model.addAttribute("activities", activityStorage.getAllActivities());
         return "home-template";
