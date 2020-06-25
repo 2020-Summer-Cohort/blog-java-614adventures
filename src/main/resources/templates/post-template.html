@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/Home.css">
+    <link rel="stylesheet" href="../static/gallery.css">
+    <link rel="stylesheet" href="../static/NavBar.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>614Adventures Post</title>
+</head>
+<body>
+<div class="logo">
+    <div class="container-logo">
+        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+             th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
+    </div>
+    <div class="line"></div>
+</div>
+<h1 th:text="${post.title}"> title </h1>
+<div class="mainblock">
+    <div class="navBar">
+        <div class="dropdown">
+            <ul>
+                <li><a class="dropbtn" th:href="@{'/'}">Home</a></li>
+                <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
+
+                <ul>
+                    <li><a th:text="${activity.name}"
+                           th:href="@{'/activities/'+${activity.name}}">Activity</a></li>
+                </ul>
+        </div>
+    </div>
+</div>
+<div class="block2">
+<section>
+    <ul>
+        <li><h1 th:text="${post.title}">Ohio Theater</h1></li>
+        <li><h2 th:text="${post.body}">Description</h2></li>
+        <li><h3 th:text="${post.activity}">Activity Type</h3></li>
+        <li><h3 th:text="${post.author}">Author</h3></li>
+        <li><p th:text="${post.date}">Date</p></li>
+        <li><p th:text="${post.time}">Time</p></li>
+       </ul>
+        <ul>
+            <li th:each="hashtag:${post.hashtags}">
+                <a th:text="'#'+${post.hashtag}" th:href="@{'/tags/'+${hashtag.hashtag}}"></a>
+            </li>
+        </ul>
+        <section>
+            <div class="block3"></div>
+</div>
+</body>
+</html>

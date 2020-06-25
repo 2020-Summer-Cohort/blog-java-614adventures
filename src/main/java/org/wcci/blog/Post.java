@@ -1,16 +1,17 @@
-    package org.wcci.blog;
+package org.wcci.blog;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
-    @Entity
+@Entity
 public class Post {
     @Id
     @GeneratedValue
     private long id;
     private String title;
+    @Column(length = 1000)
     private String body;
     private static LocalDate date;
     private static LocalTime time;
@@ -21,14 +22,15 @@ public class Post {
     @ManyToMany
     private Collection<Hashtag> hashtags;
 
-    protected Post(String title, String body, LocalDate date, LocalTime time, Author author, Optional<Activity> postActivity){}
+    protected Post(String title, String body, LocalDate date, LocalTime time, Author author, Optional<Activity> postActivity) {
+    }
 
     public Post(String title, String body, LocalDate date, LocalTime time,
                 Author author, Activity activity, Hashtag... hashtags) {
         this.title = title;
         this.body = body;
-        this.date=date;
-        this.time=time;
+        this.date = date;
+        this.time = time;
         this.author = author;
         this.activity = activity;
         this.hashtags = new ArrayList<>(Arrays.asList(hashtags));

@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="static/gallery.css">
-        <link rel="stylesheet" href="static/NavBar.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-
-        <title>614Adventures Types of Dates</title>
-    </head>
-    
-    <body>
-        <div class="container-logo">
-            <img src="static/Images/Inverted Columbus Skyline Logo with Name.png" alt="logo" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/Home.css">
+    <link rel="stylesheet" href="../static/gallery.css">
+    <link rel="stylesheet" href="../static/NavBar.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>614Adventures Activities</title>
+</head>
+<body>
+<div class="logo">
+    <div class="container-logo">
+        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+             th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
+    </div>
+    <div class="line"></div>
+</div>
+<h1>Activities</h1>
+<div class="mainblock">
+    <div class="navBar">
+        <div class="dropdown">
+            <ul>
+                <li><a class="dropbtn" th:href="@{'/'}">Home</a></li>
+                <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
+            </ul>
+            <ul>
+                <li th:each="activity:${activities}">
+                    <a th:text="${activity.name}"
+                       th:href="@{'/activities/'+${activity.name}}">Activities</a></li>
+            </ul>
         </div>
-        <div class="line"></div>
-       <div class="mainblock"> 
-            <div class="navBar">
-                <div class="dropdown">
-                    <button onclick="location.href='Home.html'" type="button" class="dropbtn">Home</button>
+    </div>
+</div>
+<div class="block2">
+    <div class="main">
+        <div class="gallery">
+            <div class="left">
+                <div class="image-box">
+                    <a class="overlay">Professional Sports</a>
+                    <div class="image" id="image1"></div>
                 </div>
-                <div class="dropdown">
-                    <button onclick="location.href='Activities.html'" type="button" class="dropbtn"><u>Activities</u></button>
-                <div class="dropdown-content">
-                    <th:each="activity:${activities}"></th>
-                    <th:text="${activity.name}></th:text>
-                    <a href="./science.html">Science</a>
-                    <a href="./theater.html">Theater</a>
-                    <a href="./nature.html">Nature</a>
-                    <a href="./food.html">Food</a>
-                    <a href="./professional-sports.html">Professional Sports</a>
+                <div class="image-box">
+                    <a class="overlay">Nature</a>
+                    <div class="image" id="image2"></div>
+                </div>
+                <div class="image-box">
+                    <a class="overlay">Science</a>
+                    <div class="image" id="image3"></div>
                 </div>
             </div>
-            <div class="dropdown">
-                <button onclick="location.href='hashtags.html'" type="button" class="dropbtn">Hashtags</button>
-                <div class="dropdown-content">
-                    <a href="#">#WorkYourLoveOut</a>
-                    <a href="#">#CraftYourLove</a>
-                    <a href="#">#WinTheirLove</a>
-                    <a href="#">#LoveIsInTheAir</a>
-                    <a href="#">#WineNotLove</a>
+            <div class="right">
+                <div class="image-box">
+                    <a class="overlay">Theater</a>
+                    <div class="image" id="image4"></div>
                 </div>
-            </div>
-        </div>
-        <div class="block2">
-            <div class="main">
-                <div class="gallery">
-                    <div class="left">
-                        <div class="image-box">
-                                <a class="overlay">Professional Sports</a>
-                                <div class="image" id="image1"></div>
-                        </div>
-                        <div class="image-box">
-                                <a class="overlay">Nature</a>
-                                <div class="image" id="image2"></div>
-                        </div>
-                        <div class="image-box">
-                                <a class="overlay">Science</a>
-                                <div class="image" id="image3"></div>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div class="image-box">
-                            <a class="overlay">Theater</a>
-                                <div class="image" id="image4"></div>
-                        </div>
-                        <div class="image-box">
-                            <a class="overlay">Food</a>
-                                <div class="image" id="image5"></div>
-                        </div>
-                    </div>
+                <div class="image-box">
+                    <a class="overlay">Food</a>
+                    <div class="image" id="image5"></div>
                 </div>
             </div>
         </div>
-        <div class="block3"></div> 
-    </body>
+    </div>
+</div>
+<div class="block3">
+    <h2>Add Category</h2>
+    <form action="add" method="Post" class="new-activity-form">
+        <label for="new-activity__activity-input" class="form_label">New Activity</label>
+        <input type="text" name="activity" id="new-activity__activity-input">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+</body>
 </html>

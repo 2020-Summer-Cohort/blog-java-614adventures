@@ -22,29 +22,16 @@
     <div class="navBar">
         <div class="dropdown">
             <ul>
-                <li>
-                    <button onclick="location.href='Home.html'" type="button" class="dropbtn"><u>Home</u></button>
-                </li>
+                <li> <a class="dropbtn" th:href="@{'/'}">Home</a></li>
+                   <li> <a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
             </ul>
         </div>
-        <div class="dropdown">
-            <ul>
-                <li> <a th:href="@{Activities.html}" type="button" class="dropbtn">Activities</a></li>
-<!--                <li th:each="activity: ${activities}"  class= "dropdown-content">-->
-<!--                    <a th:text="${activity.name}"-->
-<!--                    th:href="@{'/activities/' + ${activity.name}}">Activity Name</a></li>-->
-            </ul>
-        </div>
-    <div class="dropdown">
-        <button onclick="location.href='hashtags.html'" type="button" class="dropbtn">Hashtags</button>
-        <div class="dropdown-content">
-            <a href="#">#WorkYourLoveOut</a>
-            <a href="#">#CraftYourLove</a>
-            <a href="#">#WinTheirLove</a>
-            <a href="#">#LoveIsInTheAir</a>
-            <a href="#">#WineNotLove</a>
-        </div>
-    </div>
+<!--        <div class="dropdown">-->
+<!--            <ul>-->
+<!--                <li> <a class="dropbtn" th:href="@{'/hashtags/'}">Hashtags</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
     </div>
 </div>
 <div class="fling-minislide">

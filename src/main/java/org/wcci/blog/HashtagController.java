@@ -24,7 +24,7 @@ public class HashtagController {
 
     @PostMapping("hashtag/add")
     public String addHashtag(String hashtag, String postTitle){
-        Post postToAddHashtag = postStorage.findPostByName(postTitle);
+        Post postToAddHashtag = postStorage.findPostByTitle(postTitle);
         Hashtag hashtagToAdd = new Hashtag(hashtag);
         hashtagStorage.addHashtags(hashtagToAdd);
         postStorage.addPost(postToAddHashtag);

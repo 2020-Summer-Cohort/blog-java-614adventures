@@ -20,7 +20,7 @@ public class PostController {
 
     @GetMapping("posts/{post}")
     public String showSinglePost(@PathVariable String title, Model model) {
-        model.addAttribute("post", postStorage.findPostByName(title));
+        model.addAttribute("post", postStorage.findPostByTitle(title));
         return "post-template";
     }
 

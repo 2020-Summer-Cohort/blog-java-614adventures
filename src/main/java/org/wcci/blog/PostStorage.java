@@ -10,8 +10,8 @@ public class PostStorage {
         this.postRepo=postRepo;
     }
 
-    public Post findPostByName(String name){
-        return postRepo.findByTitle(name);
+    public Post findPostByTitle(String title){
+        return postRepo.findByTitle(title);
     }
 
     public Post findByID(long id){

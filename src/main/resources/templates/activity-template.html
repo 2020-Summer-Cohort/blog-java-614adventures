@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../static/Home.css">
+    <link rel="stylesheet" href="../static/gallery.css">
+    <link rel="stylesheet" href="../static/NavBar.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <title>614Adventures Posts</title>
+</head>
+<body>
+<div class="logo">
+    <div class="container-logo">
+        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+             th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
+    </div>
+    <div class="line"></div>
+</div>
+<!--<h1 th:text="${activity.name}"> name </h1>-->
+<div class="mainblock">
+    <div class="navBar">
+        <div class="dropdown">
+            <ul>
+                <li><a class="dropbtn" th:href="@{'/'}">Home</a></li>
+                <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <ul>
+        <li th:each="post:${activity.posts}">
+            <a th:text="${post.title}"
+               th:href="@{'/posts/'+${post.title}}">Ohio Theater</a>
+        </li>
+    </ul>
+</div>
+
+<div class="block2">
+    <h2>Add Post</h2>
+    <form action="/posts/add" method="POST" class="new-post-form">
+        <li><label for="new-post__post-title-input" class="form__label">Title</label>
+            <input type="text" name="title" id="new-post__post-title-input"></li>
+        <li><label for="new-post__post-body-input" class="form__label">Body</label>
+            <textarea type="text" name="body" id="new-post__post-body-input"></li>
+        <input th:value="${activity.id}" type="hidden" name="activity" id="new-post__post-activity-input">
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="block3"></div>
+</body>
+</html>
