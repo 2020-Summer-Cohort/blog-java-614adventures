@@ -35,11 +35,13 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag3 = new Hashtag("RocknRoll");
         Hashtag hashtag4 = new Hashtag("Singing");
         Hashtag hashtag5 = new Hashtag("Play");
+        Hashtag hashtag6 = new Hashtag("Sports");
         hashtagRepo.save(hashtag1);
         hashtagRepo.save(hashtag2);
         hashtagRepo.save(hashtag3);
         hashtagRepo.save(hashtag4);
         hashtagRepo.save(hashtag5);
+        hashtagRepo.save(hashtag6);
         Author author1 = new Author("Kendyl Hull");
         Author author2 = new Author("Kyle Wang");
         authorRepo.save(author1);
@@ -54,7 +56,17 @@ public class Populator implements CommandLineRunner {
                 "Shadowbox Live is a constantly evolving mix of original productions, dance, sketch comedies, rock 'n' roll revues, and rockumentaries. " +
                 "This theater company continues to grow as it focuses on projects that grow its roots in the Columbus community. You will always be in for a " +
                 "treat where no show is quite like the last.",LocalDate.now(), LocalTime.now(), author1, theater, hashtag1, hashtag2, hashtag3);
+        Post post3 = new Post("Columbus Blue Jackets", "The Columbus Blue Jackets are a professional ice hockey team based in Columbus, Ohio. They " +
+                "compete in the National Hockey League and currently play at Nationwide Arena.  Games are a festivity of events starting with the high intensity " +
+                "game, to free giveaways, to getting to meet Stinger, a 6-foot 9-inch bright green bug that acts as the mascot for the Blue Jackets, and there's no better " +
+                "sensation than when the Cannon, which replicates a 1857 Napoleon cannon fires off whenever the Blue Jackets score.", LocalDate.now(), LocalTime.now(), author2, professionalSports, hashtag6);
+        Post post4 = new Post("Columbus Clippers", "The Columbus Clippers are a professional Minor League Baseball team based in Columbus, Ohio. The team plays in the " +
+                "International League and is the Triple-A affiliate of the Cleveland Indians and currently play at Huntington Stadium.  Games are a great ball of fun starting with a " +
+                "view that overlooks the entire Columbus skyline, fun events such as dime-a-dog night, the always eventful hotdog race when actors dress up as your favorite food items and race to home plate" +
+                "and of course cheering on your favorite Clippers team who are annually one of the best in the league. ", LocalDate.now(), LocalTime.now(), author2, professionalSports, hashtag6);
         postRepo.save(post1);
         postRepo.save(post2);
+        postRepo.save(post3);
+        postRepo.save(post4);
     }
 }

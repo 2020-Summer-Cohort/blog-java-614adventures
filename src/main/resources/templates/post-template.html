@@ -37,7 +37,7 @@
         <h1 th:text="${post.title}">Ohio Theater</h1>
         <h2 th:text="${post.body}">Description</h2>
         <h3 th:text="${post.activity.name}">Activity Type</h3>
-        <h3 th:text="${post.authors.name}">Author</h3>
+        <h3 th:text="'By: '+${post.authors.name}">Author</h3>
         <p th:text="'Date: '+${post.date}">Date</p>
         <p th:text="'Time: '+${post.time}">Time</p>
     </section>
