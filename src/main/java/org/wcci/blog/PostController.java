@@ -12,9 +12,9 @@ import java.time.LocalTime;
 @Controller
 public class PostController {
 
-    PostStorage postStorage;
-    ActivityStorage activityStorage;
-    HashtagStorage hashtagsStorage;
+    private PostStorage postStorage;
+    private ActivityStorage activityStorage;
+    private HashtagStorage hashtagsStorage;
 
     public PostController(PostStorage postStorage) {
         this.postStorage = postStorage;
@@ -34,7 +34,7 @@ public class PostController {
         return "redirect:/activities/" + postActivity.getName();
     }
 
-    @PostMapping("/posts/hashtag/add")
+    @PostMapping("/posts/hashtags/add")
     public String addHashtag(long id, String hashtag) {
         Post post = postStorage.findByID(id);
         if (hashtagsStorage.findHashtagByName(hashtag) != null) {
@@ -48,5 +48,5 @@ public class PostController {
         post.addHashtags(hashtagsToAdd);
         postStorage.addPost(post);
         return "redirect:/posts/" + post.getTitle();
-}
+    }
 }

@@ -67,8 +67,8 @@ public class Post {
         return hashtags;
     }
 
-    public void addHashtags(Hashtag hashtagToAdd) {
-        hashtags.add(hashtagToAdd);
+    public void addHashtags(Hashtag hashtag) {
+        hashtags.add(hashtag);
     }
 
     @Override
@@ -89,14 +89,13 @@ public class Post {
         return id == post.id &&
                 Objects.equals(title, post.title) &&
                 Objects.equals(body, post.body) &&
-                Objects.equals(activity, post.activity);
+                Objects.equals(activity, post.activity) &&
+                Objects.equals(author, post.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, title, body, activity);
+        return Objects.hash(id, title, body, activity, author);
     }
-
-
 }
 

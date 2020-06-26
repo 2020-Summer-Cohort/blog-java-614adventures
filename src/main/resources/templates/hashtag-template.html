@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../static/gallery.css">
     <link rel="stylesheet" href="../static/NavBar.css">
 <!--    <link rel="shortcut icon" type="image/png" href="img/favicon.png">-->
-    <title>614Adventures Activity</title>
+    <title>614Adventures Hashtag</title>
 </head>
 <body>
 <div class="logo">
     <div class="container-logo">
-        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+        <img src="/static/Hashtags/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
              th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
     </div>
     <div class="line"></div>
@@ -30,12 +30,12 @@
             </ul>
         </div>
     </div>
-    <h1 th:text="${activity.name}"> name </h1>
+    <h1 th:text="${hashtag.name}"> name </h1>
     <ul>
-        <li th:each="post:${activity.posts}">
+        <li th:each="post:${hashtag.posts}">
             <a th:href="@{'/posts/'+${post.title}}"
                th:text="${post.title}"
-            >Ohio Theater</a>
+            >Entertainment</a>
         </li>
     </ul>
 </div>
@@ -51,7 +51,7 @@
             Body
         </label>
         <textarea type="text" name="body" id="new-post__post-body-input"  autocomplete="off" required></textarea>
-        <input th:value="${activity.id}" type="hidden" name="activity" id="new-post__post-activity-input">
+        <input th:value="${hashtag.id}" type="hidden" name="hashtag" id="new-post__post-hashtag-input">
         <button class="submit" type="submit">Submit</button>
     </form>
 </div>

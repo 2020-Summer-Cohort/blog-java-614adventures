@@ -46,13 +46,14 @@
                 <a th:text="'#'+ ${hashtag.name}" th:href="@{'/tags/'+${hashtag.name}}"></a>
             </li>
         </ul>
-        <section>
 </div>
-<form action="/posts/hashtag/add" method="POST" class="new-hashtag-form">
-    <input type="hidden" th:value="${post.id}" name="id" id="new-post__post-id-input">
-    <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag #</label>
-    <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
-    <button type="submit">Submit</button>
-</form>
+<section>
+    <form action="/posts/hashtags/add" method="POST" class="new-hashtag-form">
+        <input type="hidden" th:value="${post.id}" name="id" id="new-post__post-id-input">
+        <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag #</label>
+        <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+        <button type="submit">Submit</button>
+    </form>
+</section>
 </body>
 </html>

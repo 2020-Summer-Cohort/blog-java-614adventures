@@ -22,13 +22,21 @@ public class HashtagController {
         return "hashtag-template";
     }
 
-    @PostMapping("hashtag/add")
-    public String addHashtag(String hashtag, String postTitle){
-        Post postToAddHashtag = postStorage.findPostByTitle(postTitle);
-        Hashtag hashtagToAdd = new Hashtag(hashtag);
-        hashtagStorage.addHashtags(hashtagToAdd);
-        postStorage.addPost(postToAddHashtag);
-        return "redirect:/posts/"+postTitle;
+    @GetMapping("hashtags")
+    public String showAllHashtags(Model model){
+        model.addAttribute("hashtags", hashtagStorage.getAllHashtags());
+        return "hashtags-template";
+    }
+
+
+    @PostMapping("/hashtags/add")
+    public String addHashtag(String hashtag) {
+        if (hashtagStorage.findHashtagByName(hashtag) != null) {
+            return "redirect:/hashtags";
+        }
+        Hashtag hashtagsToAdd = new Hashtag(hashtag);
+        hashtagStorage.addHashtags(hashtagsToAdd);
+        return "redirect:/hashtags";
     }
 
 

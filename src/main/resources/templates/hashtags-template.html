@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="../static/gallery.css">
     <link rel="stylesheet" href="../static/NavBar.css">
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-    <title>614Adventures Activities</title>
+    <title>614Adventures Hashtags</title>
 </head>
 <body>
 <div class="logo">
     <div class="container-logo">
-        <img src="/static/Activities/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
+        <img src="/static/Hashtags/Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png" alt="logo"
              th:src="@{Images/Inverted%20Columbus%20Skyline%20Logo%20with%20Name.png}"/>
     </div>
     <div class="line"></div>
@@ -30,9 +30,9 @@
                 <li><a class="dropbtn" th:href="@{'/hashtags/'}">Hashtags</a></li>
             </ul>
             <ul>
-                <li th:each="activity:${activities}">
-                    <a th:text="${activity.name}"
-                       th:href="@{'/activities/'+${activity.name}}">Activities</a></li>
+                <li th:each="hashtag:${hashtags}">
+                    <a th:text="${hashtag.name}"
+                       th:href="@{'/hashtags/'+${hashtag.name}}">Hashtags</a></li>
             </ul>
         </div>
     </div>
@@ -68,10 +68,10 @@
     </div>
 </div>
 <div class="block3">
-    <h2>Add Category</h2>
-    <form action="add" method="Post" class="new-activity-form">
-        <label for="new-activity__activity-input" class="form_label">New Activity</label>
-        <input type="text" name="activity" id="new-activity__activity-input">
+    <h2>Add Hashtag</h2>
+    <form action="add" method="Post" class="new-hashtag-form">
+        <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
+        <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
         <button type="submit">Submit</button>
     </form>
 </div>
