@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HashtagController {
     HashtagStorage hashtagStorage;
-    PostStorage postStorage;
 
     public HashtagController(HashtagStorage hashtagStorage){
         this.hashtagStorage=hashtagStorage;

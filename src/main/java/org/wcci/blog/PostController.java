@@ -16,8 +16,10 @@ public class PostController {
     private ActivityStorage activityStorage;
     private HashtagStorage hashtagsStorage;
 
-    public PostController(PostStorage postStorage) {
+    public PostController(PostStorage postStorage, ActivityStorage activityStorage, HashtagStorage hashtagsStorage) {
         this.postStorage = postStorage;
+        this.activityStorage = activityStorage;
+        this.hashtagsStorage = hashtagsStorage;
     }
 
     @GetMapping("posts/{post}")
