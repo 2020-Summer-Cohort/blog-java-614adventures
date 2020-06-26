@@ -38,8 +38,8 @@
         <h2 th:text="${post.body}">Description</h2>
         <h3 th:text="${post.activity.name}">Activity Type</h3>
         <h3 th:text="${post.authors.name}">Author</h3>
-        <p th:text="${post.date}">Date</p>
-        <p th:text="${post.time}">Time</p>
+        <p th:text="'Date: '+${post.date}">Date</p>
+        <p th:text="'Time: '+${post.time}">Time</p>
     </section>
         <ul>
             <li th:each="hashtag:${post.hashtags}">
