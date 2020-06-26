@@ -39,6 +39,21 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag7 = new Hashtag("Animals");
         Hashtag hashtag8 = new Hashtag("Nature");
         Hashtag hashtag9 = new Hashtag("Science Rules");
+        Hashtag hashtag10 = new Hashtag("YummyInMyTummy");
+        Hashtag hashtag11 = new Hashtag("Drool");
+        Hashtag hashtag12 = new Hashtag("Waterfall");
+        Hashtag hashtag13 = new Hashtag("Woods");
+        Hashtag hashtag14 = new Hashtag("Date");
+        Hashtag hashtag15 = new Hashtag("InstaPicDestination");
+        Hashtag hashtag16 = new Hashtag("Eagles");
+        Hashtag hashtag17 = new Hashtag("DogFriendly");
+        Hashtag hashtag18 = new Hashtag("Trails");
+        Hashtag hashtag19 = new Hashtag("PokemonGo");
+        Hashtag hashtag20 = new Hashtag("Fishing");
+        Hashtag hashtag21 = new Hashtag("Volleyball");
+        Hashtag hashtag22 = new Hashtag("LiveMusic");
+        Hashtag hashtag23 = new Hashtag("Food&Drink");
+        Hashtag hashtag24 = new Hashtag("Brewery");
         hashtagRepo.save(hashtag1);
         hashtagRepo.save(hashtag2);
         hashtagRepo.save(hashtag3);
@@ -48,6 +63,21 @@ public class Populator implements CommandLineRunner {
         hashtagRepo.save(hashtag7);
         hashtagRepo.save(hashtag8);
         hashtagRepo.save(hashtag9);
+        hashtagRepo.save(hashtag10);
+        hashtagRepo.save(hashtag11);
+        hashtagRepo.save(hashtag12);
+        hashtagRepo.save(hashtag13);
+        hashtagRepo.save(hashtag14);
+        hashtagRepo.save(hashtag15);
+        hashtagRepo.save(hashtag16);
+        hashtagRepo.save(hashtag17);
+        hashtagRepo.save(hashtag18);
+        hashtagRepo.save(hashtag19);
+        hashtagRepo.save(hashtag20);
+        hashtagRepo.save(hashtag21);
+        hashtagRepo.save(hashtag22);
+        hashtagRepo.save(hashtag23);
+        hashtagRepo.save(hashtag24);
         Author author1 = new Author("Kendyl Hull");
         Author author2 = new Author("Kyle Wang");
         authorRepo.save(author1);
@@ -75,11 +105,38 @@ public class Populator implements CommandLineRunner {
                 "and a golf course right next door that you can spend a whole weekend with the family.", LocalDate.now(), LocalTime.now(), author2, science, hashtag7, hashtag8);
         Post post6 = new Post("COSI", "COSI is a nationally esteemed science center that has delighted Central Ohio with all things science for 55 years, inspiring interest in science, technology, engineering, and math (STEM)" +
                 " topics and delivering our experiential, hands-on fun brand of learning. Go visit the Dinosaur and DC Superheroes exhibits and make sure to save time for the famous Planetarium.", LocalDate.now(), LocalTime.now(), author2, science, hashtag9);
+        Post post7 = new Post("Shake Shack", "This modern day roadside burger stand serves up the most delicious burgers, hot dogs, frozen custard, shakes, beer, wine and more. An instant neighborhood fixture, Shake Shack welcomed people from all over the city, " +
+                "country and world who gathered together to enjoy fresh, simple, high-quality versions of the classics in a majestic setting.", LocalDate.now(), LocalTime.now(), author2, food, hashtag10, hashtag11);
+        Post post8 = new Post("Indian Run Falls", "Indian Run Falls is a beautiful secluded spot near Historic Dublin. Nestled in a small wooded area, you come across a bridge with an overlook to the first fall and then nature trails leading to different views  of the second " +
+                "larger fall and the gorge. This is a great spot to get close with nature without having to travel far.", LocalDate.now(), LocalTime.now(), author1, nature, hashtag12, hashtag13, hashtag14);
+        Post post9 = new Post("Hayden Run Falls", "Hayden Run Falls has everything you are looking for in a fun waterfall location. From the long trail leading down to the waterfall basin, to surrounding tall trees, songbirds, the Scioto River glistening between tree trunks, and the sounds of " +
+                "the rushing water. Great date spot to hang out and explore.", LocalDate.now(), LocalTime.now(), author1, nature, hashtag12, hashtag14, hashtag15);
+        Post post10 = new Post("Gogi Korean BBQ", "Gogi Korean BBQ offers a wide variety of Korean cuisine with a specialization in barbecue meats that are not found in most Korean restaurants. They utilize beef & pork that are fed natural ingredients in a free range.",
+                LocalDate.now(), LocalTime.now(), author2, food, hashtag10, hashtag11);
+        Post post11 = new Post("Highbanks Metro Park", "Highbanks Metro Park is a fun place to explore. They have many nature trails that lead to great views. A nice spot where wildlife is abundant. While visiting be sure to have a picnic under a tree or use one of their shelters. The guest visitor center " +
+                "has many education displays which is great for any avid environmental learner.", LocalDate.now(), LocalTime.now(), author1, nature, hashtag16, hashtag17, hashtag18, hashtag19, hashtag20);
+        Post post12 = new Post("Columbus Crew", "The Columbus Crew are an American professional soccer club based in Columbus, Ohio. The Crew competes in Major League Soccer and play at Mapfre Stadium. Go sit in the Nordecke Section and join a rabid fan base that beats drums, sings songs, " +
+                "and lights up smoke bombs when the Crew score goals.  Additionally, you can hang out with the Columbus Crew mascot Crew Cat.  You'll leave the event a passionate fan of soccer as well as the Columbus Crew", LocalDate.now(), LocalTime.now(), author2, professionalSports, hashtag6);
+        Post post13 = new Post("The Big Bang Columbus", "The Big Bang combines music, comedy and audience participation into a fast-paced, high-energy show that’s unlike anything you’ve ever experienced. With two pianos and two performers, it’s non-stop, totally wild fun. The music is based entirely on audience " +
+                "requests, so every night is different—but no matter what, an amazing sing-along, laugh-along, dance-along night is always guaranteed.", LocalDate.now(), LocalTime.now(), author2, theater, hashtag1, hashtag4, hashtag5);
+        Post post14 = new Post("The Goat", "This is a fun and relaxed restaurant that strives to create a unique environment where people go to be together and disconnect. Their delicious menu never stops impressing patrons. If you aren't in the mood for food, take your friend or your \"friend\" and try a few crafted cocktails " +
+                "or local bourbons & brews while watching a live music performance.", LocalDate.now(), LocalTime.now(), author1, food, hashtag21, hashtag22, hashtag23, hashtag24);
+        Post post15 = new Post("Columbus Museum of Art", "The Columbus Museum of Art is an art museum in downtown Columbus, Ohio.  The museum is a nice place to come and enjoy the beauty that others have created. There is much diversity with the types of art on display.  The food is tremendous, the staff is so kind and the grounds make for exceptional photos.",
+                LocalDate.now(), LocalTime.now(), author2, science, hashtag9, hashtag14);
         postRepo.save(post1);
         postRepo.save(post2);
         postRepo.save(post3);
         postRepo.save(post4);
         postRepo.save(post5);
         postRepo.save(post6);
+        postRepo.save(post7);
+        postRepo.save(post8);
+        postRepo.save(post9);
+        postRepo.save(post10);
+        postRepo.save(post11);
+        postRepo.save(post12);
+        postRepo.save(post13);
+        postRepo.save(post14);
+        postRepo.save(post15);
     }
 }
