@@ -6,15 +6,15 @@ import org.springframework.stereotype.Service;
 public class PostStorage {
     PostRepository postRepo;
 
-    public PostStorage(PostRepository postRepo){
-        this.postRepo=postRepo;
+    public PostStorage(PostRepository postRepo) {
+        this.postRepo = postRepo;
     }
 
-    public Post findPostByTitle(String title){
+    public Post findPostByTitle(String title) {
         return postRepo.findByTitle(title);
     }
 
-    public Post findByID(long id){
+    public Post findByID(long id) {
         return postRepo.findById(id).get();
     }
 

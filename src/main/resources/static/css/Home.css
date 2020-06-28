@@ -1,0 +1,130 @@
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    text-align: center;
+    font-size: 14pt;
+}
+
+h2 {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 14pt;
+}
+
+h3 {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 12pt;
+}
+
+p {
+    font-family: sans-serif;
+    text-align: left;
+    font-size: 10pt;
+}
+
+label {
+    font-family:sans-serif;
+}
+
+button {
+    font-family:sans-serif;
+}
+
+.form_label{
+    font-family:sans-serif;
+}
+
+#new-hashtag__hashtag-input {
+    font-family: sans-serif;
+}
+
+#new-activity__activity-input{
+    font-family: sans-serif;
+}
+
+#new-post__post-title-input {
+    font-family: sans-serif;
+}
+
+#new-post__post-body-input {
+    font-family: sans-serif;
+}
+
+#new-post__post-hashtag-input {
+    font-family: sans-serif;
+}
+
+#new-post__post-author-input{
+    font-family: sans-serif;
+}
+
+#new-post__post-activity-input{
+    font-family: sans-serif;
+}
+
+.hashtag a:hover {
+    color: #ff3366;
+}
+
+.hashtag a {
+    list-style-type: none;
+    font-family: sans-serif;
+    font-size: 12pt;
+    color: dodgerblue;
+    text-decoration: none;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+.option {
+    padding: 5px;
+    margin: 5px;
+}
+
+.option a {
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+.description {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 4pt;
+}
+
+.mainblock{
+    display:flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 75vh;
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.navBar{
+    width: 15%;
+}
+
+.block2{
+    width: 70%;
+    height: 100%;
+    padding-left: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+.block2 ul li {
+    list-style-type: none;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+.block3{
+    width:15%;
+}

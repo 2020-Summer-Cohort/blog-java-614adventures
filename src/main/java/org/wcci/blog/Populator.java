@@ -37,7 +37,7 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag5 = new Hashtag("Play");
         Hashtag hashtag6 = new Hashtag("Sports");
         Hashtag hashtag7 = new Hashtag("Animals");
-        Hashtag hashtag8 = new Hashtag("Nature");
+        Hashtag hashtag8 = new Hashtag("Neature");
         Hashtag hashtag9 = new Hashtag("ScienceRules");
         Hashtag hashtag10 = new Hashtag("YummyInMyTummy");
         Hashtag hashtag11 = new Hashtag("Drool");

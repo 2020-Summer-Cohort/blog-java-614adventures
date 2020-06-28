@@ -15,7 +15,7 @@ public class HomeController {
         this.hashtagRepo = hashtagRepo;
     }
 
-    @RequestMapping({"","/"})
+    @RequestMapping({"", "/"})
     public String showHome(Model model) {
         model.addAttribute("activities", activityRepo.findAll());
         model.addAttribute("hashtags", hashtagRepo.findAll());

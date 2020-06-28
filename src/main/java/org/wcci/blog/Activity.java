@@ -13,14 +13,15 @@ public class Activity {
     @GeneratedValue
     private long id;
     private String name;
-    @OneToMany (mappedBy = "activity")
+    @OneToMany(mappedBy = "activity")
     private Collection<Post> posts;
 
-    protected Activity () {}
+    protected Activity() {
+    }
 
-    public Activity (String name) {
-        this.name=name;
-        this.posts=posts;
+    public Activity(String name) {
+        this.name = name;
+        this.posts = posts;
     }
 
     public Collection<Post> getPosts() {

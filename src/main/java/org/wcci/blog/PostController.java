@@ -15,11 +15,13 @@ public class PostController {
     private PostStorage postStorage;
     private ActivityStorage activityStorage;
     private HashtagStorage hashtagsStorage;
+    private AuthorStorage authorStorage;
 
-    public PostController(PostStorage postStorage, ActivityStorage activityStorage, HashtagStorage hashtagsStorage) {
+    public PostController(PostStorage postStorage, ActivityStorage activityStorage, HashtagStorage hashtagsStorage, AuthorStorage authorStorage) {
         this.postStorage = postStorage;
         this.activityStorage = activityStorage;
         this.hashtagsStorage = hashtagsStorage;
+        this.authorStorage = authorStorage;
     }
 
     @GetMapping("posts/{post}")
@@ -28,12 +30,42 @@ public class PostController {
         return "post-template";
     }
 
-    @PostMapping("posts/add")
-    public String addPost(String title, String body, LocalDate date, LocalTime time,
-                          Author author, long activityId) {
-        Activity postActivity = activityStorage.findActivityByID(activityId).get();
-        postStorage.addPost(new Post(title, body, date, time, author, postActivity));
-        return "redirect:/activities/" + postActivity.getName();
+    @PostMapping("/activities/posts/add")
+    public String addPost(String title, String body, String author, long activity, String hashtag) {
+        Author newAuthor = new Author(author);
+        authorStorage.addAuthors(newAuthor);
+        if (hashtagsStorage.findHashtagByName(hashtag) != null) {
+            Hashtag newHashtag = hashtagsStorage.findHashtagByName(hashtag);
+            Activity activityToAdd = activityStorage.findActivityByID(activity).get();
+            Post newPost = new Post(title, body, LocalDate.now(), LocalTime.now(), newAuthor, activityToAdd, newHashtag);
+            postStorage.addPost(newPost);
+            return "redirect:/activities/" + activityToAdd.getName();
+        }
+        Hashtag newHashtag = new Hashtag(hashtag);
+        hashtagsStorage.addHashtags(newHashtag);
+        Activity activityToAdd = activityStorage.findActivityByID(activity).get();
+        Post newPost = new Post(title, body, LocalDate.now(), LocalTime.now(), newAuthor, activityToAdd, newHashtag);
+        postStorage.addPost(newPost);
+        return "redirect:/activities/" + activityToAdd.getName();
+    }
+
+    @PostMapping("/hashtags/posts/add")
+    public String addPost(String title, String body, String author, String activity, long hashtag) {
+        Author newAuthor = new Author(author);
+        authorStorage.addAuthors(newAuthor);
+        if (activityStorage.findActivityByName(activity) != null) {
+            Activity newActivity = activityStorage.findActivityByName(activity);
+            Hashtag hashtagToAdd = hashtagsStorage.findByID(hashtag);
+            Post newPost = new Post(title, body, LocalDate.now(), LocalTime.now(), newAuthor, newActivity, hashtagToAdd);
+            postStorage.addPost(newPost);
+            return "redirect:/hashtags/" + hashtagToAdd.getName();
+        }
+        Activity newActivity = new Activity(activity);
+        activityStorage.addActivity(newActivity);
+        Hashtag hashtagToAdd = hashtagsStorage.findByID(hashtag);
+        Post newPost = new Post(title, body, LocalDate.now(), LocalTime.now(), newAuthor, newActivity, hashtagToAdd);
+        postStorage.addPost(newPost);
+        return "redirect:/hashtags/" + hashtagToAdd.getName();
     }
 
     @PostMapping("/posts/hashtags/add")

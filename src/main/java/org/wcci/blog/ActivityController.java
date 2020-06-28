@@ -23,7 +23,7 @@ public class ActivityController {
     }
 
     @GetMapping("activities")
-    public String showAllActivities(Model model){
+    public String showAllActivities(Model model) {
         model.addAttribute("activities", activityStorage.getAllActivities());
         return "activities-template";
     }

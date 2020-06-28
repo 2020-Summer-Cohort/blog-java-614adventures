@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class AuthorController {
     AuthorStorage authorStorage;
 
-    public AuthorController(AuthorStorage authorStorage){
-        this.authorStorage=authorStorage;
+    public AuthorController(AuthorStorage authorStorage) {
+        this.authorStorage = authorStorage;
     }
 
     @GetMapping("authors/{author}")

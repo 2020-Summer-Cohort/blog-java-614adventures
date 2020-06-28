@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class HashtagController {
     HashtagStorage hashtagStorage;
 
-    public HashtagController(HashtagStorage hashtagStorage){
-        this.hashtagStorage=hashtagStorage;
+    public HashtagController(HashtagStorage hashtagStorage) {
+        this.hashtagStorage = hashtagStorage;
     }
 
     @GetMapping("hashtags/{hashtag}")
@@ -22,7 +22,7 @@ public class HashtagController {
     }
 
     @GetMapping("hashtags")
-    public String showAllHashtags(Model model){
+    public String showAllHashtags(Model model) {
         model.addAttribute("hashtags", hashtagStorage.getAllHashtags());
         return "hashtags-template";
     }

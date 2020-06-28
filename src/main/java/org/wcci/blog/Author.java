@@ -15,7 +15,7 @@ public class Author {
     @GeneratedValue
     private long id;
     private String name;
-    @OneToMany (mappedBy = "author")
+    @OneToMany(mappedBy = "author")
     private Collection<Post> posts;
 
     protected Author() {
@@ -23,7 +23,7 @@ public class Author {
 
     public Author(String name) {
         this.name = name;
-        this.posts=posts;
+        this.posts = posts;
     }
 
     public long getId() {

@@ -40,7 +40,7 @@ public class JpaWiringTest {
         Post post2 = new Post("Shadowbox Live", "For those who are interested in taking a walk on the wilder side of theater, then Shadowbox Live is for you. " +
                 "Shadowbox Live is a constantly evolving mix of original productions, dance, sketch comedies, rock 'n' roll revues, and rockumentaries. " +
                 "This theater company continues to grow as it focuses on projects that grow its roots in the Columbus community. You will always be in for a " +
-                "treat where no show is quite like the last.",LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
+                "treat where no show is quite like the last.", LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
         postRepo.save(post1);
         postRepo.save(post2);
         entityManager.flush();
@@ -68,7 +68,7 @@ public class JpaWiringTest {
         Post post2 = new Post("Shadowbox Live", "For those who are interested in taking a walk on the wilder side of theater, then Shadowbox Live is for you. " +
                 "Shadowbox Live is a constantly evolving mix of original productions, dance, sketch comedies, rock 'n' roll revues, and rockumentaries. " +
                 "This theater company continues to grow as it focuses on projects that grow its roots in the Columbus community. You will always be in for a " +
-                "treat where no show is quite like the last.",LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
+                "treat where no show is quite like the last.", LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
         postRepo.save(post1);
         postRepo.save(post2);
         entityManager.flush();
@@ -96,7 +96,7 @@ public class JpaWiringTest {
         Post post2 = new Post("Shadowbox Live", "For those who are interested in taking a walk on the wilder side of theater, then Shadowbox Live is for you. " +
                 "Shadowbox Live is a constantly evolving mix of original productions, dance, sketch comedies, rock 'n' roll revues, and rockumentaries. " +
                 "This theater company continues to grow as it focuses on projects that grow its roots in the Columbus community. You will always be in for a " +
-                "treat where no show is quite like the last.",LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
+                "treat where no show is quite like the last.", LocalDate.now(), LocalTime.now(), author1, activity1, hashtag1);
         postRepo.save(post1);
         postRepo.save(post2);
         entityManager.flush();
