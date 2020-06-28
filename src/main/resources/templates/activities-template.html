@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/NavBar.css"/>
     <link rel="stylesheet" href="/css/slideshow.css"/>
     <link rel="stylesheet" href="/css/gallery.css"/>
+    <link rel="stylesheet" href="/css/activities.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet"/>
     <title>614Adventures: Activities</title>
 </head>
@@ -27,14 +28,10 @@
             <li><a class="dropbtn" th:href="@{'/activities/'}"><u>Activities</u></a></li>
             <li><a class="dropbtn" th:href="@{'/hashtags/'}">Hashtags</a></li>
         </ul>
-        <ul class="options">
-            <li th:each="activity:${activities}" class="option">
-                <a th:text="${activity.name}"
-                   th:href="@{'/activities/'+${activity.name}}">Activities</a></li>
-        </ul>
+        <h2>Add A New Activity Below</h2>
         <form action="/activities/add" method="Post" class="new-activity-form">
-            <label for="new-activity__activity-input" class="form_label">New Activity</label>
-            <input type="text" name="activity" id="new-activity__activity-input">
+            <label for="new-activity__activity-input" class="form_label"></label>
+            <input type="text" name="activity" id="new-activity__activity-input" placeholder="New Activity">
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -70,5 +67,10 @@
     </div>
     <div class="block3"></div>
 </div>
+<ul class="options">
+    <li th:each="activity:${activities}" class="option">
+        <a th:text="${activity.name}"
+           th:href="@{'/activities/'+${activity.name}}">Activities</a></li>
+</ul>
 </body>
 </html>

@@ -1,0 +1,43 @@
+*{
+    font-family: 'Syncopate';
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    background-color: darkblue;
+}
+
+.options li a{
+    font-family: 'Syncopate';
+    color: white;
+    font-size: x-small;
+}
+
+h2{
+    font-family: 'Syncopate';
+    font-size: 10pt;
+    margin-top: 137%;
+}
+
+
+form{
+    font-family: 'Syncopate';
+    background-color: darkblue;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+input{
+    font-family: 'Syncopate';
+    font-size: 12pt;
+    width: 100%;
+}
+
+button {
+    font-family: 'Syncopate';
+    position: relative;
+    padding: 10px;
+    margin-left: 35%;
+    margin-top: 10px;
+}
