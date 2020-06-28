@@ -33,7 +33,7 @@
                 <a th:text="'#'+${hashtag.name}"
                    th:href="@{'/hashtags/'+${hashtag.name}}">Hashtags</a></li>
         </ul>
-        <form action="add" method="Post" class="new-hashtag-form">
+        <form action="/hashtags/add" method="Post" class="new-hashtag-form">
             <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
             <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
             <button type="submit">Submit</button>

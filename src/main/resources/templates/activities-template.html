@@ -33,7 +33,7 @@
                 <a th:text="${activity.name}"
                    th:href="@{'/activities/'+${activity.name}}">Activities</a></li>
         </ul>
-        <form action="add" method="Post" class="new-activity-form">
+        <form action="/activities/add" method="Post" class="new-activity-form">
             <label for="new-activity__activity-input" class="form_label">New Activity</label>
             <input type="text" name="activity" id="new-activity__activity-input">
             <button type="submit">Submit</button>
