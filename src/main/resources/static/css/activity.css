@@ -56,3 +56,7 @@ button {
     margin-left: 35%;
     margin-top: 10px;
 }
+
+.caption a{
+    text-decoration: none;
+}

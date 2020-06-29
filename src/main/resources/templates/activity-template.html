@@ -28,13 +28,6 @@
             <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
             <li><a class="dropbtn" th:href="@{'/hashtags/'}">Hashtags</a></li>
         </ul>
-        <ul class="options">
-            <li th:each="post:${activity.posts}" class="option">
-                <a th:href="@{'/posts/'+${post.title}}"
-                   th:text="${post.title}"
-                >Ohio Theater</a>
-            </li>
-        </ul>
         <h2>Add A New Post Below</h2>
         <form action="/activities/posts/add" method="POST" class="new-post-form">
             <label for="new-post__post-title-input" class="form__label"></label>
@@ -45,6 +38,7 @@
             <select id="post-author-input" name="author">
                 <option value="Kendyl Hull">Kendyl Hull</option>
                 <option value="Kyle Wang">Kyle Wang</option>
+                <option value="Anonymous">Anonymous</option>
             </select>
             <input th:value="${activity.id}" type="hidden" name="activity" id="new-post__post-activity-input">
             <button class="submit" type="submit">Submit</button>
@@ -55,9 +49,10 @@
         <div class="wrapper">
             <div class="item" th:each="post:${activity.posts}">
                 <div class="polaroid">
-                    <img height="200" th:src="@{'/Images/' + ${post.title} + '.jpg'}"/>
-                    <div class="caption" th:text="${post.title}"></div>
-                    <a th:href="@{'/posts/'+${post.title}}"></a>
+                    <img height="200" th:src="@{'/Images/' + ${post.title} + '.jpg'}" />
+                    <div class="caption" >
+                    <a th:text="${post.title}" th:href="@{'/posts/'+${post.title}}"></a>
+                    </div>
                 </div>
             </div>
         </div>

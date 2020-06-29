@@ -5,10 +5,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/css/Home.css"/>
     <link rel="stylesheet" href="/css/NavBar.css"/>
-    <link rel="stylesheet" href="/css/slideshow.css"/>
     <link rel="stylesheet" href="/css/gallery.css"/>
+    <link rel="stylesheet" href="/css/posts.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet"/>
     <title th:text="${post.title}">614Adventures Post</title>
 </head>
@@ -20,21 +19,23 @@
     </div>
     <div class="line"></div>
 </div>
-<h1 th:text="${post.title}">title</h1>
 <div class="mainblock">
     <div class="navBar">
         <ul class="dropdown">
             <li><a class="dropbtn" th:href="@{'/'}">Home</a></li>
             <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
             <li><a class="dropbtn" th:href="@{'/hashtags/'}">Hashtags</a></li>
+            <li><a class="dropbtn" th:text="${post.activity.name}"
+                                   th:href="@{'/activities/'+${post.activity.name}}">Activity</a></li>
         </ul>
     </div>
     <div class="block2">
         <ul>
-            <li><h2 th:text="${post.body}">Description</h2></li>
-            <li class="hashtag"><a th:text="${post.activity.name}" th:href="@{'/activities/'+${post.activity.name}}">Activity
-                Type</a></li>
-            <li><h3 th:text="'By: '+${post.authors.name}">Author</h3></li>
+            <div class="postImage">
+                <img height="300" th:src="@{'/Images/' + ${post.title} + '.jpg'}"/>
+            </div>
+            <li><p th:text="${post.body}">Description</p></li>
+            <li><h4 th:text="'By: '+${post.authors.name}">Author</h4></li>
             <li><p th:text="'Date: '+${post.date}">Date</p></li>
             <li><p th:text="'Time: '+${post.time}">Time</p></li>
             <ul class="hashtags">
@@ -44,12 +45,15 @@
             </ul>
             <form action="/posts/hashtags/add" method="POST" class="new-hashtag-form">
                 <input type="hidden" th:value="${post.id}" name="id" id="new-post__post-id-input">
-                <label for="new-hashtag__hashtag-input" class="form__label">Add Hashtag #</label>
-                <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+                <label for="new-hashtag__hashtag-input" class="form__label"></label>
+                <input type="text" name="hashtag" class="new-hashtag" id="new-hashtag__hashtag-input" placeholder="Add New Hashtag">
                 <button type="submit">Submit</button>
             </form>
         </ul>
     </div>
+</div>
+<div class="options">
+    <h3 th:text="${post.title}"> name </h3>
 </div>
 </body>
 </html>

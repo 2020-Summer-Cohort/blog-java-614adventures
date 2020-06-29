@@ -1,0 +1,50 @@
+.block2{
+    display: flex;
+    flex-direction: row;
+}
+
+ul{
+    list-style: none;
+}
+
+.postImage{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+p{
+    font-family: 'Syncopate';
+    font-size: small;
+}
+
+.options{
+    display: flex;
+    flex-direction: row;
+    background-color: darkblue;
+}
+
+h3{
+    font-family: 'Syncopate';
+    font-size: large;
+    color: white;
+    padding: 5px;
+}
+
+h4{
+    margin: 10px 10px 10px 0px;
+}
+
+.hashtags{
+    background-color: darkblue;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    margin: 15px 0px 15px 0px;
+}
+
+.hashtags li a{
+    font-size: small;
+    margin-right: 10px;
+    color: white;
+}
