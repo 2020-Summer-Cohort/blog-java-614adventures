@@ -5,13 +5,13 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/css/Home.css"/>
     <link rel="stylesheet" href="/css/NavBar.css"/>
     <link rel="stylesheet" href="/css/slideshow.css"/>
     <link rel="stylesheet" href="/css/gallery.css"/>
-    <link rel="stylesheet" href="/css/activities.css"/>
+    <link rel="stylesheet" href="/css/polaroid.css"/>
+    <link rel="stylesheet" href="/css/activity.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet"/>
-    <title th:text="${activity.name}">614Adventures Activity</title>
+    <title th:text="${activity.name}"></title>
 </head>
 <body>
 <div class="logo">
@@ -21,7 +21,6 @@
     </div>
     <div class="line"></div>
 </div>
-<h1 th:text="${activity.name}"> name </h1>
 <div class="mainblock">
     <div class="navBar">
         <ul class="dropdown">
@@ -36,23 +35,38 @@
                 >Ohio Theater</a>
             </li>
         </ul>
-        <h3 class="option">Add Post</h3>
+        <h2>Add A New Post Below</h2>
         <form action="/activities/posts/add" method="POST" class="new-post-form">
-            <label for="new-post__post-title-input" class="form__label">Title</label>
-            <input type="text" name="title" id="new-post__post-title-input" autocomplete="off" required>
-            <label for="new-post__post-body-input" class="form__label">Body</label>
-            <textarea type="text" name="body" id="new-post__post-body-input" autocomplete="off" required></textarea>
-            <label for="new-post__post-author-input" class="form__label">Author</label>
-            <input type="text" name="author" id="new-post__post-author-input" autocomplete="off" required>
-            <label for="new-post__post-hashtag-input" class="form__label">Hashtag</label>
-            <input type="text" name="hashtag" id="new-post__post-hashtag-input" autocomplete="off" required>
+            <label for="new-post__post-title-input" class="form__label"></label>
+            <input type="text" name="title" id="new-post__post-title-input" placeholder="Title" autocomplete="off" required>
+            <label for="new-post__post-body-input" class="form__label"></label>
+            <textarea type="text" name="body" id="new-post__post-body-input" placeholder="Body" autocomplete="off" required></textarea>
+            <label for="post-author-input" class="form__label">Author</label>
+            <select id="post-author-input" name="author">
+                <option value="Kendyl Hull">Kendyl Hull</option>
+                <option value="Kyle Wang">Kyle Wang</option>
+            </select>
             <input th:value="${activity.id}" type="hidden" name="activity" id="new-post__post-activity-input">
             <button class="submit" type="submit">Submit</button>
         </form>
     </div>
     <div class="block2">
+        <div class="polaroid-gallery">
+        <div class="wrapper">
+            <div class="item" th:each="post:${activity.posts}">
+                <div class="polaroid">
+                    <img height="200" th:src="@{'/Images/' + ${post.title} + '.jpg'}"/>
+                    <div class="caption" th:text="${post.title}"></div>
+                    <a th:href="@{'/posts/'+${post.title}}"></a>
+                </div>
+            </div>
+        </div>
+        </div>
     </div>
     <div class="block3"></div>
+</div>
+<div class="options">
+<h3 th:text="${activity.name}"> name </h3>
 </div>
 </body>
 </html>
