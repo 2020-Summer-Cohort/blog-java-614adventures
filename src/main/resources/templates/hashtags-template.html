@@ -5,10 +5,9 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="/css/Home.css"/>
     <link rel="stylesheet" href="/css/NavBar.css"/>
-    <link rel="stylesheet" href="/css/slideshow.css"/>
     <link rel="stylesheet" href="/css/gallery.css"/>
+    <link rel="stylesheet" href="/css/hashtags.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet"/>
     <title>614Adventures Hashtags</title>
 </head>
@@ -20,7 +19,6 @@
     </div>
     <div class="line"></div>
 </div>
-<h1>Hashtags</h1>
 <div class="mainblock">
     <div class="navBar">
         <ul class="dropdown">
@@ -28,14 +26,14 @@
             <li><a class="dropbtn" th:href="@{'/activities/'}">Activities</a></li>
             <li><a class="dropbtn" th:href="@{'/hashtags/'}"><u>Hashtags</u></a></li>
         </ul>
-        <ul class="options">
+        <ul class="hashtag-list">
             <li th:each="hashtag:${hashtags}" class="option">
                 <a th:text="'#'+${hashtag.name}"
                    th:href="@{'/hashtags/'+${hashtag.name}}">Hashtags</a></li>
         </ul>
         <form action="/hashtags/add" method="Post" class="new-hashtag-form">
-            <label for="new-hashtag__hashtag-input" class="form_label">New Hashtag</label>
-            <input type="text" name="hashtag" id="new-hashtag__hashtag-input">
+            <label for="new-hashtag__hashtag-input" class="form_label"></label>
+            <input type="text" name="hashtag" class="new-hashtag" id="new-hashtag__hashtag-input" placeholder="Add New Hashtag">
             <button type="submit">Submit</button>
         </form>
     </div>
@@ -44,25 +42,25 @@
             <div class="gallery">
                 <div class="left">
                     <div class="image-box">
-                        <a class="overlay">#Animals</a>
+                        <a class="overlay" th:href="@{'/hashtags/Animals'}">#Animals</a>
                         <div class="image" id="image6"></div>
                     </div>
                     <div class="image-box">
-                        <a class="overlay">#Artist</a>
+                        <a class="overlay" th:href="@{'/hashtags/Artist'}">#Artist</a>
                         <div class="image" id="image7"></div>
                     </div>
                     <div class="image-box">
-                        <a class="overlay">#Sports</a>
+                        <a class="overlay" th:href="@{'/hashtags/Sports'}">#Sports</a>
                         <div class="image" id="image8"></div>
                     </div>
                 </div>
                 <div class="right">
                     <div class="image-box">
-                        <a class="overlay">#Neature</a>
+                        <a class="overlay" th:href="@{'/hashtags/Nature'}">#Nature</a>
                         <div class="image" id="image9"></div>
                     </div>
                     <div class="image-box">
-                        <a class="overlay">#Food&Drink</a>
+                        <a class="overlay" th:href="@{'/hashtags/Food&Drink'}">#Food&Drink</a>
                         <div class="image" id="image10"></div>
                     </div>
                 </div>
@@ -70,6 +68,9 @@
         </div>
     </div>
     <div class="block3"></div>
+</div>
+<div class="options">
+<h3>Hashtags</h3>
 </div>
 </body>
 </html>
